@@ -4,7 +4,7 @@ LIB=libhello.so
 
 all: $(LIB)
 
-$(LIB): hello.o
+$(LIB): %.o
 	$(CC) $< -shared -fPIC -Wl,-soname=$(MAJOR) -o $(LIB).$(VER)
 
 %.o: %.c
